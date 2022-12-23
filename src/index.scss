@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+$red: #A10035;
+$yellow: #FEC260;
+$sky: #3FA796;
+$purple: #2A0944;
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url('./myLogo.png');
+    background-position: center;
+    background-size: cover;
+    main {
+        padding: 20px 50px;
+        header {
+            a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h1 {
+                    font-size: 30px;
+                    color: $yellow;
+                    span {
+                        letter-spacing: -2px;
+                        color: $red;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .search {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 30px;
+                h1 {
+                    color: $yellow;
+                    font-size: 25px;
+                    margin-bottom: 10px;
+                }
+                input {
+                    width: 400px;
+                    font-size: 16px;
+                    padding: 5px 10px;
+                    background: transparent;
+                    border: 2px solid $yellow;
+                    outline: none;
+                    border-radius: 5px;
+                    color: $yellow;
+                }
+            }
+            .loading {
+                width: 100%;
+                height: 50vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h1 {
+                    font-size: 5vw;
+                    position: relative;
+                    color: transparent;
+                    &::before {
+                        content: attr(content);
+                        position: absolute;
+                        width: 0%;
+                        height: 100%;
+                        color: $yellow;
+                        top: 0;
+                        left: 0;
+                        overflow: hidden;
+                        animation: animate .5s linear infinite;
+                        @keyframes animate {
+                            0% {
+                                width: 20%;
+                            } 70% {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .not-found {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                button {
+                    font-size: 16px;
+                    padding: 5px 10px;
+                    margin: 10px 0;
+                    background: $red;
+                    color: $yellow;
+                    border: none;
+                    outline: none;
+                    border-radius: 5px;
+                    box-shadow: rgba(161,0,53, 0.9) 0px 2px 8px 0px;
+                    cursor: pointer;
+                    &:hover {
+                        background: $yellow;
+                        color: $red;
+                        box-shadow: rgba(254,194,96, 0.9) 0px 2px 8px 0px;
+                    }
+                }
+                h1 {
+                    color: $red;
+                }
+            }
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            .item {
+                width: 500px;
+                height: 210px;
+                background: transparent;
+                border: 3px solid $yellow;
+                margin: 10px;
+                border-radius: 5px;
+                border-bottom: 4px solid $red;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .images {
+                    width: 200px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img { 
+                        width: 150px;
+                    }
+                }
+                .title {
+                    width: 300px;
+                    height: 100%;
+                    padding: 10px;
+                    h1 {
+                        color: $yellow;
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                    }
+                    p {
+                        font-size: 16px;
+                        color: $yellow;
+                    }
+                    .rarity {
+                        font-size: 16px;
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+        footer {
+            margin-top: 30px;
+            .credit {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                p {
+                    color: $yellow;
+                    a {
+                        text-decoration: none;
+                        color: green;
+                        transition: 2s;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        main {
+            width: 100%;
+            .container {
+                width: 100%;
+                .item {
+                    flex-direction: column;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        main {
+            header {
+                .search {
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        main {
+            header {
+                a {
+                    flex-direction: column;
+                    h1 {
+                        font-size: 20px;
+                    }
+                }
+                .search {
+                    h1 {
+                        font-size: 18px;
+                        text-align: center;
+                    }
+                }
+            }
+            .container {
+                padding: 20px;
+                .item {
+                    width: 100%;
+                    height: auto;
+                    .images {
+                        img {
+                            width: 100px;
+                        }
+                    }
+                    .title {
+                        width: 100%;
+                        h1 {
+                            font-size: 18px;
+                        }
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
