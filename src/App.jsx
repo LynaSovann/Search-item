@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import myLogo from "./myLogo.png";
 const {useState} = React;
 const App = () => {
     const api = "https://fortnite-api.theapinetwork.com/store/get";
@@ -20,7 +21,7 @@ const App = () => {
             <header>
                 <a href="/">
                     <h1>L <span>xx</span> H</h1>
-                    <h1>Me<span>&</span>U</h1>
+                    <img src={myLogo} alt="" />
                 </a>
                 <div className="search">
                     <h1>Fortnite Items</h1>

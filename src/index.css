@@ -9,7 +9,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("./myLogo.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
   background-position: center;
   background-size: cover;
 }
@@ -30,6 +30,9 @@ body main header a h1 span {
   letter-spacing: -2px;
   color: #A10035;
   font-size: 16px;
+}
+body main header a img {
+  width: 50px;
 }
 body main header .search {
   display: flex;
